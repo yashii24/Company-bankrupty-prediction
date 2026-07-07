@@ -1,68 +1,105 @@
 # Company Bankruptcy Prediction using Machine Learning
 
-## Overview
+## Project Overview
 
-This project predicts whether a company is likely to go bankrupt based on its financial indicators using Machine Learning classification models.
+This project focuses on predicting whether a company is likely to go bankrupt based on its financial indicators using Machine Learning classification algorithms. Bankruptcy prediction is an important financial risk assessment task that helps investors, financial institutions, and organizations identify financially distressed companies at an early stage.
 
-The project includes data preprocessing exploratory data analysis model training model evaluation and model comparison to identify the best performing model.
-
----
-
-## Objective
-
-Develop a machine learning model that can classify companies into:
-
-- Healthy Company
-- Bankrupt Company
-
-This project can assist in financial risk assessment and decision making.
+The project follows a complete Machine Learning workflow, including data preprocessing, exploratory data analysis (EDA), model training, model evaluation, feature importance analysis, and model saving for future deployment.
 
 ---
 
-## Dataset
+## Project Objective
 
-- Total Records: 10,000
-- Features: 30 Financial Indicators
-- Target Variable: class
+The objective of this project is to build a machine learning model capable of accurately classifying companies into two categories:
 
-Class Distribution
+- **0** → Non-Bankrupt Company
+- **1** → Bankrupt Company
 
-- Healthy Companies: 9,500
-- Bankrupt Companies: 500
+The trained model can assist in early financial risk assessment and support better business decision-making.
+
+---
+
+## Dataset Information
+
+| Attribute | Value |
+|-----------|-------|
+| Total Records | 10,000 |
+| Total Features | 30 |
+| Target Variable | `class` |
+| Missing Values | 0 |
+| Duplicate Records | 0 |
+
+The dataset consists of financial ratios and business-related indicators commonly used for bankruptcy prediction.
 
 ---
 
 ## Technologies Used
 
 - Python
+- Google Colab
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
 - Scikit-learn
 - Joblib
-- Google Colab
 - GitHub
 
 ---
 
-## Machine Learning Workflow
+## Project Workflow
 
-1. Import Libraries
-2. Load Dataset
-3. Data Exploration
-4. Data Cleaning
-5. Exploratory Data Analysis
-6. Feature Scaling
-7. Train-Test Split
-8. Model Training
-9. Model Evaluation
-10. Model Comparison
-11. Save Best Model
+```
+Load Dataset
+      │
+      ▼
+Data Exploration
+      │
+      ▼
+Exploratory Data Analysis (EDA)
+      │
+      ▼
+Data Preprocessing
+      │
+      ▼
+Train-Test Split
+      │
+      ▼
+Feature Scaling
+      │
+      ▼
+Model Training
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Feature Importance Analysis
+      │
+      ▼
+Save Best Model
+```
 
 ---
 
-## Models Trained
+## Exploratory Data Analysis
+
+The dataset was analyzed before model training to understand its characteristics.
+
+The following checks were performed:
+
+- Dataset overview
+- Missing value analysis
+- Duplicate record detection
+- Class distribution visualization
+- Correlation analysis
+- Feature importance analysis
+
+---
+
+## Machine Learning Models
+
+The following classification models were trained and evaluated:
 
 - Logistic Regression
 - Decision Tree Classifier
@@ -73,6 +110,8 @@ Class Distribution
 
 ## Evaluation Metrics
 
+The models were evaluated using the following performance metrics:
+
 - Accuracy
 - Precision
 - Recall
@@ -80,52 +119,132 @@ Class Distribution
 
 ---
 
-## Results
+## Model Performance
 
-All evaluated models achieved excellent performance on the provided dataset.
+| Model | Accuracy | Precision | Recall | F1 Score |
+|--------|----------|-----------|--------|----------|
+| Logistic Regression | 1.00 | 1.00 | 1.00 | 1.00 |
+| Decision Tree | 1.00 | 1.00 | 1.00 | 1.00 |
+| Random Forest | 1.00 | 1.00 | 1.00 | 1.00 |
+| Gradient Boosting | 1.00 | 1.00 | 1.00 | 1.00 |
 
-The Random Forest model was selected as the final model for deployment due to its strong performance and ability to capture complex relationships among financial indicators.
+> **Note:** All evaluated models achieved excellent performance on the provided dataset. The Random Forest model was selected as the final model due to its strong predictive capability and feature importance analysis.
 
 ---
 
-## Feature Importance
+## Important Features
 
-Top financial indicators contributing to bankruptcy prediction include:
+The Random Forest model identified the following financial indicators as the most influential features for bankruptcy prediction:
 
 - Current Assets / Total Liabilities
-- Short Term Liabilities / Total Assets
+- Short-Term Liabilities / Total Assets
+- Current Assets / Short-Term Liabilities
 - Profit on Sales
 - Equity Fixed Assets
+- Total Liabilities / Total Assets
+- EBIT / Sales
+- Constant Capital / Fixed Assets
+- Gross Profit / Short-Term Liabilities
 - Working Capital
 
 ---
 
-## Repository Structure
+## Project Structure
 
-```text
+```
 company-bankruptcy-prediction/
 │
 ├── data/
+│   └── company_bankruptcy.csv
+│
 ├── notebooks/
+│   └── Company_Bankruptcy_Prediction.ipynb
+│
 ├── models/
+│   ├── bankruptcy_model.pkl
+│   └── scaler.pkl
+│
 ├── images/
+│   ├── class_distribution.png
+│   ├── confusion_matrix.png
+│   └── feature_importance.png
+│
 ├── requirements.txt
 ├── README.md
+├── LICENSE
 └── .gitignore
 ```
 
 ---
 
+## Visualizations
+
+### Class Distribution
+
+![Class Distribution](images/class_distribution.png)
+
+---
+
+### Confusion Matrix
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+---
+
+### Top 10 Feature Importance
+
+![Feature Importance](images/feature_importance.png)
+
+---
+
+## How to Run the Project
+
+### Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/company-bankruptcy-prediction.git
+```
+
+### Move into the project directory
+
+```bash
+cd company-bankruptcy-prediction
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Open the notebook
+
+Launch Jupyter Notebook or upload the notebook to Google Colab and run all cells sequentially.
+
+---
+
 ## Future Improvements
 
-- Hyperparameter tuning
-- Cross Validation
+- Hyperparameter tuning using GridSearchCV
+- Cross-validation
 - XGBoost implementation
-- Streamlit Web Application
-- Cloud Deployment
+- LightGBM implementation
+- SHAP explainability
+- Streamlit web application
+- Cloud deployment
 
 ---
 
 ## Author
 
-Yashi Kardam
+**Yashi Kardam**
+
+B.Tech Information Technology
+
+Interested in Machine Learning, Artificial Intelligence, Data Science, and Software Development.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
