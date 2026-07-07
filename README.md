@@ -193,7 +193,7 @@ company-bankruptcy-prediction/
 
 ### Top 10 Feature Importance
 
-![Feature Importance](images/feature_importance.png)
+![Feature Importance](images/importance_features.png)
 
 ---
 
